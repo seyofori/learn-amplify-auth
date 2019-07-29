@@ -7,12 +7,16 @@ export default function SignUp() {
     <>
       <h1>Sign Up</h1>
       <Formik>
-        {props => (
-          <Form>
-            <FormField label='Username'>
-              <TextInput />
-            </FormField>
-          </Form>
+        {({ handleSubmit, values, handleChange, handleBlur }) => (
+          <form onSubmit={handleSubmit}>
+            <label>Username</label>
+            <TextInput
+              values={values.username}
+              name='username'
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </form>
         )}
       </Formik>
     </>
